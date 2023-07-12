@@ -105,3 +105,109 @@
     target:
       area_id: sergiu_room
   mode: single
+- id: '1689198618031'
+  alias: Couch Switch Brightness Up Hold
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: d0b84870865c04abfe399981a84e1b2e
+    type: action
+    subtype: brightness_move_up
+    discovery_id: 0xf4b3b1fffe2ac91a action_brightness_move_up
+  condition: []
+  action:
+  - service: light.turn_on
+    data:
+      brightness: 254
+      transition: 1
+    target:
+      area_id: living_room_2
+- id: '1689198618032'
+  alias: Couch Switch Brightness Down Hold
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: d0b84870865c04abfe399981a84e1b2e
+    type: action
+    subtype: brightness_move_down
+    discovery_id: 0xf4b3b1fffe2ac91a action_brightness_move_down
+  action:
+  - service: light.turn_off
+    data:
+      transition: 1
+    target:
+      area_id: living_room_2
+  mode: single
+- id: '1689198618033'
+  alias: Couch Switch Brightness Up Click
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: d0b84870865c04abfe399981a84e1b2e
+    type: action
+    subtype: 'off'
+    discovery_id: 0xf4b3b1fffe2ac91a action_on
+  action:
+  - service: light.turn_on
+    data:
+      brightness_step_pct: 20
+      transition: 1
+    target:
+      area_id: living_room_2
+  mode: single
+- id: '1689198618034'
+  alias: Couch Switch Brightness Down Click
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: d0b84870865c04abfe399981a84e1b2e
+    type: action
+    subtype: 'off'
+    discovery_id: 0xf4b3b1fffe2ac91a action_off
+  action:
+  - service: light.turn_on
+    data:
+      brightness_step_pct: -20
+    target:
+      area_id: living_room_2
+  mode: single
+- id: '1689198618035'
+  alias: Couch Switch Left Hold
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: d0b84870865c04abfe399981a84e1b2e
+    type: action
+    subtype: arrow_left_hold
+    discovery_id: 0xf4b3b1fffe2ac91a action_arrow_left_hold
+  condition: []
+  action:
+  - service: light.turn_on
+    data:
+      color_temp: 153
+    target:
+      area_id: living_room_2
+  mode: single
+- id: '1689198618036'
+  alias: Couch Switch Left Hold
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: d0b84870865c04abfe399981a84e1b2e
+    type: action
+    subtype: arrow_right_hold
+    discovery_id: 0xf4b3b1fffe2ac91a action_arrow_right_hold
+  condition: []
+  action:
+  - service: light.turn_on
+    data:
+      color_temp: 500
+    target:
+      area_id: living_room_2
+  mode: single
