@@ -1,0 +1,10 @@
+homeassistant:
+  auth_providers:
+    - type: homeassistant
+
+http:
+  use_x_forwarded_for: true
+  trusted_proxies: 
+    - 172.22.0.2
+
+automation: !include automations.yaml

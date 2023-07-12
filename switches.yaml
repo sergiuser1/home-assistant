@@ -1,0 +1,15 @@
+  - platform: flux
+    lights:
+      - light.kenny_bed
+      - light.lamp_1
+      - light.kenny_corner
+      - light.entry_master
+      - light.kitchen_main
+      - light.tv_lamp
+      - light.lamp_2
+    name: redshift
+    start_colortemp: 4000
+    sunset_colortemp: 3000
+    stop_colortemp: 2700
+    mode: mired
+    disable_brightness_adjust: false
