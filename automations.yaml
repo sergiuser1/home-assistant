@@ -88,7 +88,7 @@
       area_id: sergiu_room
   mode: single
 - id: '1688770884298'
-  alias: Sergiu Switch Left Hold
+  alias: Sergiu Switch Right Hold
   description: ''
   trigger:
   - platform: device
@@ -189,12 +189,12 @@
   action:
   - service: light.turn_on
     data:
-      color_temp: 153
+      color_temp_kelvin: 2500
     target:
       area_id: living_room_2
   mode: single
 - id: '1689198618036'
-  alias: Couch Switch Left Hold
+  alias: Couch Switch Right Hold
   description: ''
   trigger:
   - platform: device
@@ -207,7 +207,7 @@
   action:
   - service: light.turn_on
     data:
-      color_temp: 500
+      color_temp_kelvin: 9000
     target:
       area_id: living_room_2
   mode: single
