@@ -83,7 +83,7 @@
   action:
   - service: light.turn_on
     data:
-      color_temp: 153
+      color_temp: 500
     target:
       area_id: sergiu_room
   mode: single
@@ -101,7 +101,7 @@
   action:
   - service: light.turn_on
     data:
-      color_temp: 500
+      color_temp: 153
     target:
       area_id: sergiu_room
   mode: single
@@ -203,6 +203,112 @@
     type: action
     subtype: arrow_right_hold
     discovery_id: 0xf4b3b1fffe2ac91a action_arrow_right_hold
+  condition: []
+  action:
+  - service: light.turn_on
+    data:
+      color_temp_kelvin: 9000
+    target:
+      area_id: living_room_2
+  mode: single
+- id: '1689198618030'
+  alias: Entry Switch Brightness Up Hold
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: 2954fde42da4cddbcc4d59c046dc4f1b
+    type: action
+    subtype: brightness_move_up
+    discovery_id: 0x50325ffffe17c953 action_brightness_move_up
+  condition: []
+  action:
+  - service: light.turn_on
+    data:
+      brightness: 254
+      transition: 1
+    target:
+      area_id: living_room_2
+- id: '1689198618028'
+  alias: Entry Switch Brightness Down Hold
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: 2954fde42da4cddbcc4d59c046dc4f1b
+    type: action
+    subtype: brightness_move_down
+    discovery_id: 0x50325ffffe17c953 action_brightness_move_down
+  action:
+  - service: light.turn_off
+    data:
+      transition: 1
+    target:
+      area_id: living_room_2
+  mode: single
+- id: '1689198618027'
+  alias: Entry Switch Brightness Up Click
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: 2954fde42da4cddbcc4d59c046dc4f1b
+    type: action
+    subtype: 'off'
+    discovery_id: 0x50325ffffe17c953 action_on
+  action:
+  - service: light.turn_on
+    data:
+      brightness_step_pct: 20
+      transition: 1
+    target:
+      area_id: living_room_2
+  mode: single
+- id: '1689198618026'
+  alias: Entry Switch Brightness Down Click
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: 2954fde42da4cddbcc4d59c046dc4f1b
+    type: action
+    subtype: 'off'
+    discovery_id: 0x50325ffffe17c953 action_off
+  action:
+  - service: light.turn_on
+    data:
+      brightness_step_pct: -20
+    target:
+      area_id: living_room_2
+  mode: single
+- id: '1689198618025'
+  alias: Entry Switch Left Hold
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: 2954fde42da4cddbcc4d59c046dc4f1b
+    type: action
+    subtype: arrow_left_hold
+    discovery_id: 0x50325ffffe17c953 action_arrow_left_hold
+  condition: []
+  action:
+  - service: light.turn_on
+    data:
+      color_temp_kelvin: 2500
+    target:
+      area_id: living_room_2
+  mode: single
+- id: '1689198618024'
+  alias: Entry Switch Right Hold
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: 2954fde42da4cddbcc4d59c046dc4f1b
+    type: action
+    subtype: arrow_right_hold
+    discovery_id: 0x50325ffffe17c953 action_arrow_right_hold
   condition: []
   action:
   - service: light.turn_on
