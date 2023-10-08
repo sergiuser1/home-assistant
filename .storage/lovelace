@@ -1,0 +1,329 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace",
+  "data": {
+    "config": {
+      "title": "Home",
+      "views": [
+        {
+          "theme": "Backend-selected",
+          "visible": [
+            {
+              "user": "61833d134c844b03968f58d61772f5e0"
+            },
+            {
+              "user": "87b6ee9265c34af984d34982f681cdb6"
+            }
+          ],
+          "title": "Kenny",
+          "path": "kenny",
+          "badges": [],
+          "cards": [
+            {
+              "type": "entities",
+              "entities": [
+                {
+                  "entity": "light.kenny_bed"
+                },
+                {
+                  "entity": "light.lamp_1"
+                },
+                {
+                  "entity": "light.kenny_corner"
+                }
+              ]
+            },
+            {
+              "type": "entities",
+              "entities": [
+                {
+                  "entity": "light.entry_master"
+                },
+                {
+                  "entity": "light.kitchen_main"
+                },
+                {
+                  "entity": "light.tv_lamp"
+                },
+                {
+                  "entity": "light.lamp_2"
+                }
+              ]
+            },
+            {
+              "type": "weather-forecast",
+              "entity": "weather.home"
+            },
+            {
+              "show_name": true,
+              "show_icon": true,
+              "type": "button",
+              "tap_action": {
+                "action": "toggle"
+              },
+              "entity": "switch.redshift"
+            },
+            {
+              "show_name": true,
+              "show_icon": true,
+              "show_state": true,
+              "type": "glance",
+              "entities": [
+                {
+                  "entity": "sensor.kenny_weight"
+                },
+                {
+                  "entity": "sensor.kenny_lean_body_mass"
+                },
+                {
+                  "entity": "sensor.kenny_muscle_mass"
+                },
+                {
+                  "entity": "sensor.kenny_body_fat"
+                }
+              ],
+              "columns": 2,
+              "title": "Xiaomi body scale"
+            },
+            {
+              "type": "light",
+              "entity": "light.living_room"
+            }
+          ]
+        },
+        {
+          "theme": "Backend-selected",
+          "path": "default_view",
+          "title": "Home",
+          "badges": [],
+          "cards": [
+            {
+              "type": "entities",
+              "entities": [
+                {
+                  "entity": "light.entry_master"
+                },
+                {
+                  "entity": "light.kitchen_main"
+                },
+                {
+                  "entity": "light.tv_lamp"
+                },
+                {
+                  "entity": "light.lamp_2"
+                }
+              ]
+            },
+            {
+              "type": "light",
+              "entity": "light.living_room"
+            },
+            {
+              "show_current": true,
+              "show_forecast": true,
+              "type": "weather-forecast",
+              "entity": "weather.home"
+            }
+          ]
+        },
+        {
+          "theme": "Backend-selected",
+          "title": "Sergiu",
+          "path": "sergiu",
+          "visible": [
+            {
+              "user": "87b6ee9265c34af984d34982f681cdb6"
+            }
+          ],
+          "badges": [],
+          "cards": [
+            {
+              "show_name": true,
+              "show_icon": true,
+              "type": "button",
+              "entity": "light.sergiu_room",
+              "show_state": true,
+              "tap_action": {
+                "action": "more-info"
+              }
+            },
+            {
+              "type": "light",
+              "entity": "light.sergiu_master",
+              "name": "Master"
+            },
+            {
+              "type": "light",
+              "entity": "light.sergiu_side"
+            },
+            {
+              "type": "light",
+              "entity": "light.sergiu_bed"
+            },
+            {
+              "type": "entities",
+              "entities": [
+                {
+                  "entity": "sensor.sergiu_vindstyrka_pm25"
+                },
+                {
+                  "entity": "sensor.sergiu_vindstyrka_temperature"
+                },
+                {
+                  "entity": "sensor.sergiu_vindstyrka_humidity"
+                },
+                {
+                  "entity": "sensor.sergiu_vindstyrka_voc_index"
+                }
+              ],
+              "title": "Vindstyrka"
+            },
+            {
+              "chart_type": "line",
+              "period": "5minute",
+              "type": "statistics-graph",
+              "title": "Vindstyrka",
+              "entities": [
+                {
+                  "entity": "sensor.sergiu_vindstyrka_pm25",
+                  "name": "PM2.5"
+                },
+                {
+                  "entity": "sensor.sergiu_vindstyrka_temperature",
+                  "name": "Temperature"
+                },
+                {
+                  "entity": "sensor.sergiu_vindstyrka_humidity",
+                  "name": "Humidity"
+                },
+                {
+                  "entity": "sensor.sergiu_vindstyrka_voc_index",
+                  "name": "VOC"
+                }
+              ],
+              "stat_types": [
+                "mean",
+                "min",
+                "max"
+              ],
+              "hide_legend": false,
+              "unit": "µg/m³",
+              "days_to_show": 30
+            }
+          ]
+        },
+        {
+          "theme": "Backend-selected",
+          "title": "Server",
+          "path": "server",
+          "icon": "mdi:server",
+          "badges": [],
+          "cards": [
+            {
+              "type": "history-graph",
+              "entities": [
+                {
+                  "entity": "sensor.load_1m"
+                },
+                {
+                  "entity": "sensor.processor_temperature"
+                },
+                {
+                  "entity": "sensor.memory_use"
+                }
+              ],
+              "title": "System",
+              "hours_to_show": 4
+            },
+            {
+              "type": "entities",
+              "entities": [
+                {
+                  "entity": "sensor.deluge_status"
+                },
+                {
+                  "entity": "sensor.deluge_down_speed"
+                },
+                {
+                  "entity": "sensor.deluge_up_speed"
+                },
+                {
+                  "entity": "switch.deluge"
+                }
+              ],
+              "title": "Deluge"
+            },
+            {
+              "show_name": true,
+              "show_icon": true,
+              "show_state": true,
+              "type": "glance",
+              "entities": [
+                {
+                  "entity": "sensor.network_in_enp8s0"
+                },
+                {
+                  "entity": "sensor.network_out_enp8s0"
+                }
+              ],
+              "title": "Network"
+            },
+            {
+              "type": "entities",
+              "entities": [
+                {
+                  "entity": "sensor.cnlbp621c"
+                },
+                {
+                  "entity": "sensor.cnlbp621c_canon_cartridge_054_cyan_toner"
+                },
+                {
+                  "entity": "sensor.cnlbp621c_canon_cartridge_054_magenta_to"
+                },
+                {
+                  "entity": "sensor.cnlbp621c_canon_cartridge_054_yellow_ton"
+                },
+                {
+                  "entity": "sensor.cnlbp621c_canon_cartridge_054_black_toner"
+                }
+              ],
+              "title": "Canon LBP621C"
+            },
+            {
+              "type": "gauge",
+              "entity": "sensor.eloverblik_energy_total"
+            }
+          ]
+        },
+        {
+          "theme": "Backend-selected",
+          "title": "Jack",
+          "path": "jack",
+          "visible": [
+            {
+              "user": "6dac7589f1764e5181a290c85e0f3bf1"
+            }
+          ],
+          "badges": [],
+          "cards": [
+            {
+              "type": "entities",
+              "entities": [
+                {
+                  "entity": "light.entry_master"
+                },
+                {
+                  "entity": "light.kitchen_main"
+                },
+                {
+                  "entity": "light.tv_lamp"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
