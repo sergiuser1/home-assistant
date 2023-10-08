@@ -120,10 +120,87 @@
               "entity": "light.living_room"
             },
             {
+              "type": "custom:apexcharts-card",
+              "graph_span": "7d",
+              "header": {
+                "show": true,
+                "title": "Electricity consumption last 7 days"
+              },
+              "span": {
+                "end": "day",
+                "offset": "-1d"
+              },
+              "series": [
+                {
+                  "entity": "sensor.eloverblik_energy_statistic",
+                  "type": "column",
+                  "statistics": {
+                    "type": "sum",
+                    "period": "hour"
+                  },
+                  "group_by": {
+                    "func": "diff",
+                    "start_with_last": true,
+                    "duration": "1d"
+                  }
+                }
+              ],
+              "apex_config": {
+                "xaxis": {
+                  "labels": {
+                    "datetimeFormatter": {
+                      "day": "ddd"
+                    }
+                  }
+                }
+              }
+            },
+            {
               "show_current": true,
               "show_forecast": true,
               "type": "weather-forecast",
               "entity": "weather.home"
+            },
+            {
+              "type": "custom:apexcharts-card",
+              "graph_span": "24h",
+              "header": {
+                "title": "Energy price today (dkk/kWh)",
+                "show": true
+              },
+              "span": {
+                "start": "day"
+              },
+              "now": {
+                "show": true,
+                "label": "Now"
+              },
+              "series": [
+                {
+                  "entity": "sensor.nordpool_kwh_dk2_dkk_3_10_025",
+                  "type": "column",
+                  "data_generator": "return entity.attributes.raw_today.map((start, index) => {\n  return [new Date(start[\"start\"]).getTime(), entity.attributes.raw_today[index][\"value\"]];\n});\n"
+                }
+              ]
+            },
+            {
+              "type": "custom:apexcharts-card",
+              "graph_span": "1d",
+              "header": {
+                "title": "Energy price tomorrow (dkk/kWh)",
+                "show": true
+              },
+              "span": {
+                "start": "day",
+                "offset": "+1d"
+              },
+              "series": [
+                {
+                  "entity": "sensor.nordpool_kwh_dk2_dkk_3_10_025",
+                  "type": "column",
+                  "data_generator": "return entity.attributes.raw_tomorrow.map((start, index) => {\n  return [new Date(start[\"start\"]).getTime(), entity.attributes.raw_tomorrow[index][\"value\"]];\n});\n"
+                }
+              ]
             }
           ]
         },
