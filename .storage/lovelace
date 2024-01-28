@@ -11,9 +11,6 @@
           "visible": [
             {
               "user": "61833d134c844b03968f58d61772f5e0"
-            },
-            {
-              "user": "87b6ee9265c34af984d34982f681cdb6"
             }
           ],
           "title": "Kenny",
@@ -31,6 +28,12 @@
                 },
                 {
                   "entity": "light.kenny_corner"
+                },
+                {
+                  "entity": "light.kenny_led_strip"
+                },
+                {
+                  "entity": "light.kenny_small_lamp"
                 }
               ]
             },
@@ -105,13 +108,13 @@
                   "entity": "light.entry_master"
                 },
                 {
+                  "entity": "light.lamp_2"
+                },
+                {
                   "entity": "light.kitchen_main"
                 },
                 {
                   "entity": "light.tv_lamp"
-                },
-                {
-                  "entity": "light.lamp_2"
                 }
               ]
             },
@@ -216,13 +219,11 @@
           "badges": [],
           "cards": [
             {
-              "show_name": true,
-              "show_icon": true,
-              "type": "button",
+              "type": "light",
               "entity": "light.sergiu_room",
-              "show_state": true,
-              "tap_action": {
-                "action": "more-info"
+              "name": "Room",
+              "hold_action": {
+                "action": "none"
               }
             },
             {
@@ -260,20 +261,27 @@
               "chart_type": "line",
               "period": "5minute",
               "type": "statistics-graph",
-              "title": "Vindstyrka",
+              "title": "Vindstyrka Temperature",
               "entities": [
-                {
-                  "entity": "sensor.sergiu_vindstyrka_pm25",
-                  "name": "PM2.5"
-                },
                 {
                   "entity": "sensor.sergiu_vindstyrka_temperature",
                   "name": "Temperature"
-                },
-                {
-                  "entity": "sensor.sergiu_vindstyrka_humidity",
-                  "name": "Humidity"
-                },
+                }
+              ],
+              "stat_types": [
+                "mean",
+                "min",
+                "max"
+              ],
+              "hide_legend": true,
+              "days_to_show": 1
+            },
+            {
+              "chart_type": "line",
+              "period": "5minute",
+              "type": "statistics-graph",
+              "title": "Vindstyrka VOC",
+              "entities": [
                 {
                   "entity": "sensor.sergiu_vindstyrka_voc_index",
                   "name": "VOC"
@@ -284,9 +292,47 @@
                 "min",
                 "max"
               ],
-              "hide_legend": false,
+              "hide_legend": true,
+              "days_to_show": 1
+            },
+            {
+              "chart_type": "line",
+              "period": "5minute",
+              "type": "statistics-graph",
+              "title": "Vindstyrka PM2.5",
+              "entities": [
+                {
+                  "entity": "sensor.sergiu_vindstyrka_pm25",
+                  "name": "PM2.5"
+                }
+              ],
+              "stat_types": [
+                "mean",
+                "min",
+                "max"
+              ],
+              "hide_legend": true,
               "unit": "µg/m³",
-              "days_to_show": 30
+              "days_to_show": 1
+            },
+            {
+              "chart_type": "line",
+              "period": "5minute",
+              "type": "statistics-graph",
+              "title": "Vindstyrka Humidity",
+              "entities": [
+                {
+                  "entity": "sensor.sergiu_vindstyrka_humidity",
+                  "name": "Humidity"
+                }
+              ],
+              "stat_types": [
+                "mean",
+                "min",
+                "max"
+              ],
+              "hide_legend": true,
+              "days_to_show": 1
             }
           ]
         },

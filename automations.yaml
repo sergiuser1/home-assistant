@@ -12,8 +12,8 @@
   action:
   - service: light.turn_on
     data:
-      brightness: 254
       transition: 1
+      brightness_step_pct: 10
     target:
       area_id: sergiu_room
 - id: '1688766152849'
@@ -28,8 +28,7 @@
     discovery_id: 0xf4b3b1fffe2ac039 action_brightness_move_down
   action:
   - service: light.turn_off
-    data:
-      transition: 1
+    data: {}
     target:
       area_id: sergiu_room
   mode: single
@@ -47,7 +46,6 @@
   - service: light.turn_on
     data:
       brightness_step_pct: 20
-      transition: 1
     target:
       area_id: sergiu_room
   mode: single
@@ -65,7 +63,6 @@
   - service: light.turn_on
     data:
       brightness_step_pct: -20
-      transition: 1
     target:
       area_id: sergiu_room
   mode: single
@@ -316,4 +313,40 @@
       color_temp_kelvin: 9000
     target:
       area_id: living_room_2
+  mode: single
+- id: '1700485427220'
+  alias: Sergiu Switch Right Click
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: 6c879a1195b5301b077b3aab53dee978
+    type: action
+    subtype: arrow_right_click
+    discovery_id: 0xf4b3b1fffe2ac039 action_arrow_right_click
+  condition: []
+  action:
+  - service: light.turn_on
+    data:
+      brightness_pct: 100
+    target:
+      area_id: sergiu_room
+  mode: single
+- id: '1700485746813'
+  alias: Sergiu Switch Left Click
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: 6c879a1195b5301b077b3aab53dee978
+    type: action
+    subtype: arrow_left_click
+    discovery_id: 0xf4b3b1fffe2ac039 action_arrow_left_click
+  condition: []
+  action:
+  - service: light.turn_on
+    data:
+      brightness_pct: 0
+    target:
+      area_id: sergiu_room
   mode: single
